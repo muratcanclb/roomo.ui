@@ -1,0 +1,20 @@
+@media (max-width: 767px) {
+  .sxe {
+    display: none;
+    width: 5%;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .sxe {
+    width: 5%;
+    height: auto;
+    display: flex;
+    margin-right: 1px; /* Değerini değiştirebilirsiniz */
+  }
+}
+
+.clr{
+  background-color: #FFB74D;
+}
