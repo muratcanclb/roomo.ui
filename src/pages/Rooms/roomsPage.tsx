@@ -127,7 +127,7 @@ export default function roomsPage() {
                     color="text.secondary"
                     component="div"
                   >
-                    Fiyat : {value.price}
+                    Fiyat:{value.price}
                   </Typography>
                 </CardContent>
                 <Box
