@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import roomoLogo from '../../assets/roomoLogo.png';
 import './menuBar.css'
 
-const pages = ['GALERİ','Odalar', 'Rezerve', 'ORGANİZASYON', 'HİZMETLERİMİZ', 'İLETİŞİM'];
+const pages = [{text:'GALERİ',value:'galeri'},{text:'Odalar',value:'odalar'}, {text:'Rezerve',value:'Rezerve'},{text:'ORGANİZASYON',value:'ORGANİZASYON'}, {text:'HİZMETLERİMİZ',value:'HİZMETLERİMİZ'}];
 const settings = ['Profil', 'Ayarlar', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -28,7 +28,7 @@ function ResponsiveAppBar() {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (root:string) => {
     setAnchorElNav(null);
   };
 
@@ -89,8 +89,8 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.text} onClick={() => handleCloseNavMenu(page.value)}>
+                  <Typography textAlign="center">{page.text}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -117,11 +117,11 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={page.text}
+                onClick={() => handleCloseNavMenu(page.value)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {page.text}
               </Button>
             ))}
           </Box>
