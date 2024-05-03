@@ -16,6 +16,7 @@
   .image {
     position: relative;
     box-shadow: 10px 7px 20px orange;
+    aspect-ratio: 3/2;
   }
   
   .image::after {
